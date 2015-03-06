@@ -1,0 +1,5 @@
+#忽略所有的target目录
+target
+
+#忽略所有的class文件
+*.class
