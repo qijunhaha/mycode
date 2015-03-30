@@ -1,4 +1,4 @@
-package com.qijun.code.javacore.threadlocal;
+package com.qijun.code.javacore.threadlocal.demo1;
 
 /** 
  * 
