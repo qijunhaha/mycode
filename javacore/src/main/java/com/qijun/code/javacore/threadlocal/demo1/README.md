@@ -1,1 +1,2 @@
 MyThreadLocal类中对比使用局部变量和使用ThreadLocal的区别
+http://outofmemory.cn/code-snippet/2024/Java-multithreading-shenru-ThreadLocal
