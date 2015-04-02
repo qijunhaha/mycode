@@ -7,23 +7,34 @@ package com.qijun.code.javacore.thread.demo3;
 public class TestMain {
 
     public static void main(String[] args) {
-        String[] strs = { "1", "2", "3", "4" };
 
-        for (int i = 0; i < strs.length; i++) {
-            try {
-                Thread.sleep(2000);
-                interrupted();
-            } catch (InterruptedException e) {
-                System.out.println("Interrupted");
-                return;
+        final Thread t1 = new Thread() {
+
+            @Override
+            public void run() {
+                System.out.println("t1 is run" + Thread.currentThread());
+                try {
+                    Thread.sleep(10000);
+                } catch (InterruptedException e) {
+                    System.out.println("interrupted");
+                }
+                System.out.println("t1 is die");
             }
+        };
+        
+        Thread t2 = new Thread(){
+            
+            @Override
+            public void run() {
+                System.out.println("t2 is run" + Thread.currentThread());
+                t1.interrupt();
+                System.out.println("t2 is die");
+            }
+        };
 
-            System.out.println(strs[i]);
-        }
+        t1.start();
+        t2.start();
+        
     }
-    
-    private static void interrupted() throws InterruptedException{
-        throw new InterruptedException();
-    }
-    
+
 }

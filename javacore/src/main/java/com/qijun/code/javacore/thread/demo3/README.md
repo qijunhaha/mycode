@@ -1,1 +1,1 @@
-interrupted test
+interrupt test
