@@ -8,7 +8,7 @@ import java.util.Iterator;
  */
 public class TestMain2 {
     
-    // t1 thread只有在被interrupt的时刻flag是true，然后马上就成了false，这个中断状态只是中断一个时刻的状态
+    // 调用Thread.interrupt()设置这个标记。当线程通过调用静态方法Thread.interrupted()检测中断时，中断状态会被清除。非静态的isInterrupted()方法被线程用来检测其他线程的中断状态，不改变中断状态标记。
     public static void main(String[] args) {
 
         final Thread t1 = new Thread() {
